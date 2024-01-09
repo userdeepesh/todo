@@ -1,6 +1,9 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 app.set('view engine', 'ejs');
+const mongodb = 'mongodb+srv://simpli:simpli123@simpli.qt9xc8j.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(mongodb).then(() =>console.log('connected')).catch(err => console.log(err))
 
 app.listen(3000);
 
