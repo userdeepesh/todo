@@ -30,6 +30,10 @@ app.get('/add-item', (req, res) => {
 // post item 
 app.post('/items',(req,res)=>{
     console.log(req.body)
+    const item = Item(req.body);
+    item.save().then(()=>{
+        res.redirect('/get-items')
+    }).catch(err=>console.log(err))
 
 })
 
